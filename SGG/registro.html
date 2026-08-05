@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - SGG</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <button id="btn-tema" onclick="cambiarTema()">Modo Día/Noche</button>
+
+    <div class="login">
+        <h2>Registro de Usuario</h2>
+        
+        <input type="text" id="reg-nombre" placeholder="Nombre/s" oninput="validarFormRegistro()">
+        <input type="text" id="reg-apellido" placeholder="Apellido/s" oninput="validarFormRegistro()">
+        <input type="text" id="reg-usuario" placeholder="Nombre de Usuario" oninput="validarFormRegistro()">
+        
+        <label style="display:block; text-align:left; font-size:12px; margin-bottom:2px;">Fecha de Nacimiento:</label>
+        <input type="date" id="reg-fecha" onchange="validarFormRegistro()">
+        
+        <input type="email" id="reg-email" placeholder="Correo Electrónico Corporativo" oninput="validarFormRegistro()">
+        
+        <div class="campo-password">
+            <input type="password" id="reg-pass" placeholder="Contraseña" oninput="validarFormRegistro()">
+            <button type="button" class="btn-ojo" onclick="toggleVisibilidad('reg-pass', this)">👁️</button>
+        </div>
+
+        <ul class="requisitos">
+            <li id="req-min" class="invalido">❌ Mínimo 8 caracteres</li>
+            <li id="req-mayus" class="invalido">❌ Al menos 1 letra Mayúscula</li>
+            <li id="req-minus" class="invalido">❌ Al menos 1 letra Minúscula</li>
+            <li id="req-num" class="invalido">❌ Al menos 1 número (Dígito)</li>
+            <li id="req-esp" class="invalido">❌ Al menos 1 carácter especial</li>
+        </ul>
+
+        <div class="campo-password">
+            <input type="password" id="reg-pass2" placeholder="Repetir Contraseña" oninput="validarFormRegistro()">
+            <button type="button" class="btn-ojo" onclick="toggleVisibilidad('reg-pass2', this)">👁️</button>
+        </div>
+        
+        <button id="btn-submit-reg" onclick="registrarUsuario()" disabled>Registrarse</button>
+        
+        <p id="msg-registro"></p>
+
+        <div class="enlaces">
+            <a href="index.html">Volver al Login</a>
+        </div>
+    </div>
+
+    <script src="js/loginjs/login.js"></script>
+</body>
+</html>
